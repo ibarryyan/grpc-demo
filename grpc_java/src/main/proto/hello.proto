@@ -1,0 +1,21 @@
+syntax = "proto3";  //指定语法格式
+package proto;  //指定生成的包名字；
+
+option java_multiple_files = true;
+option java_package = "org.ymx.proto";
+option go_package = "/";
+option java_outer_classname = "Hello";
+option objc_class_prefix = "YMX";
+
+
+service HelloService {
+  rpc SayHello(HelloRequest) returns (HelloReply) {}
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloReply {
+  string message = 1;
+}
